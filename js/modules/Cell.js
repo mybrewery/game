@@ -1,6 +1,9 @@
 'use strict';
 
-define(['config/field'], function(config) {
+define([
+    'config/field',
+    'postal'
+    ], function(config, postal) {
 
     var Cell = function( /*obj*/ options, /*obj*/ parent) {
         this.element = document.createElement('div');
@@ -50,7 +53,14 @@ define(['config/field'], function(config) {
         },
         /*on-click callback*/
         onClick: function( /*obj*/ evt) {
-            onCellClick(this, field);
+            postal.publish({
+                channel : 'cells',
+                topic : 'clicked',
+                data : {
+                    evt : evt,
+                    cell : this
+                }
+            });
         }
     };
 

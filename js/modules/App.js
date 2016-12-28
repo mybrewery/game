@@ -1,12 +1,26 @@
 'use strict';
-define(['modules/Field', 'postal'], function(Field, postal){
+define([
+	'modules/Field', 
+	'postal'
+	], function(Field, postal){
 
 	var App = function(){
-		console.log(postal);
 		
+		//App subscribtions
+		this.subscribtion = {
+			cellClick : postal.subscribe({
+				channel : 'cells',
+				topic : 'clicked',
+				callback : function(data){
+					console.log(data);
+				}
+			})
+		};
+
+		//App modules init
 		this.modules = {
 			field : new Field(document.body)
-		}
+		};
 
 	};
 
