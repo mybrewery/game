@@ -11,6 +11,20 @@ define(function(){
 		  	'#00bcd4',
 		  	'#ff9800'
 		],
-		size : 0.8
+		cellStyles : ['selected'],
+		size : 0.8,
+		directions : [{
+            x : 1,
+            y : 0
+        }, {
+            x : -1,
+            y : 0
+        }, {
+            x : 0,
+            y : 1
+        }, {
+            x : 0,
+            y : -1
+        }]
 	};
 });
