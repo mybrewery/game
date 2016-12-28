@@ -12,8 +12,8 @@ define([
 				channel : 'cells',
 				topic : 'clicked',
 				callback : function(data){
-					console.log(data);
-				}
+					console.log(this.modules.field.sibsGet(data.cell));
+				}.bind(this)
 			})
 		};
 

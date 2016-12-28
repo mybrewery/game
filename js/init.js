@@ -6,5 +6,5 @@ require.config({
 })
 
 require(['modules/App'], function(App){
-	var app = new App()
+	window.app = new App()
 });
