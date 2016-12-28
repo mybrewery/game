@@ -1,6 +1,8 @@
 {
+	"name" : "CellGame",
 	"dependencies" : {
 		"postal" : "latest",
-		"lodash" : "latest"
+		"lodash" : "latest",
+		"requirejs" : "latest"
 	}
 }
